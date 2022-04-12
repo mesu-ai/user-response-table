@@ -15,7 +15,8 @@ const handleAction=()=>{
 
 
     // data send to server
-    fetch('http://127.0.0.1:8000/changing-state',{
+    const url='http://127.0.0.1:8000/changing-state';
+    fetch(url,{
         method:'POST',
         headers:{
             'Content-Type': 'application/json'
@@ -34,8 +35,6 @@ const handleAction=()=>{
         document.getElementById('loadingId').style.display='none';
         document.getElementById('alertFailedId').style.display='block';
 
-        // return <p>error</p>
-
     });
 
 }
@@ -44,6 +43,5 @@ const handleAlert=()=>{
     document.getElementById('alertShowId').style.display='none'
     document.getElementById('alertFailedId').style.display='none';
 
-    // console.log('clicked');
 
 }
