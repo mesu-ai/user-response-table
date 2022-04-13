@@ -8,7 +8,6 @@ const dataLoad=()=>{
     fetch('./data.json')
     .then(res=>res.json())
     .then(data=>{
-        // console.log(data);
          showData(data);
     
     })
@@ -19,10 +18,10 @@ dataLoad();
 
 
 const showData=(data)=>{
+    console.log(data);
 
     for (const [idx,cellData] of data.entries()) {
-       // console.log(cellData,idx);
-
+        console.log(cellData,idx);
 
        const tableBody=document.getElementById('tbodyID');
        const tr=document.createElement('tr');
@@ -39,19 +38,15 @@ const showData=(data)=>{
         </td>
        `
        tableBody.appendChild(tr);
+      
         
     }
 
 
 }
 
-const handleButton=(id)=>{
-    console.log(id);
 
-}
-
-
-const handleAction=(userId,userName)=>{
+    const handleAction=(userId,userName)=>{
    
     document.getElementById('loadingId').style.display='block';
     

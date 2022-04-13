@@ -16,32 +16,9 @@
 
     <div style="max-height: 100vh;" class="d-flex flex-column justify-content-center align-items-center mt-3">
 
-    <!-- success alert -->
-    <div  class="mt-5 w-50 mx-auto alert alert-success alert-dismissible" role="alert" id="alertShowId">
-      <div class="d-flex justify-content-between">
-        <p class="mb-0"><strong>Success! </strong> Data Send to Server.</p>
-        <button onclick="handleAlert()" class="disMissAlert"><span >&times;</span></button>
-      </div>
-    </div>
-
-    <!-- failed alert -->
-
-    <div  class="mt-5 w-50 mx-auto alert alert-danger alert-dismissible" role="alert" id="alertFailedId">
-      <div class="d-flex justify-content-between">
-        <p class="mb-0"><strong>Failed! </strong> Something worng.Try later...</p>
-        <button onclick="handleAlert()" class="disMissAlert"><span >&times;</span></button>
-      </div>
-    </div>
-    
-
-    <!-- loading process -->
-
-    <div id="loadingId" class="spinner-border text-danger mx-auto mt-5 mb-4" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
 
     
-    <!-- user table -->
+    <!-- user report table -->
     
     <table class="table w-50 table-bordered text-center">
       <thead class="thead-dark">
@@ -53,7 +30,7 @@
           
         </tr>
       </thead>
-      <tbody id="tbodyID">
+      <tbody id="reportID">
          <!-- dynamic from js -->
       </tbody>
     </table>
@@ -71,7 +48,7 @@
 
 
     <!-- fucnntional script -->
-    <Script src="index.js"></Script>
+    <Script src="report.js"></Script>
 
   
   </body>
