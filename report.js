@@ -1,5 +1,4 @@
 
-
 const dataLoad=()=>{
     fetch('./data.json')
     .then(res=>res.json())
@@ -27,7 +26,8 @@ const showData=(data)=>{
           <td >${cellData.userId}</td>
           <td >${cellData.userName}</td>
         <td>
-            <button onclick="handleAction('${cellData?.userId}','${cellData?.userName}')" type="button" class="btn btn-primary">Primary</button>
+            
+        <button onclick="window.location.href = 'reportdetails.html'" type="button" class="btn btn-primary">Primary</button>
         </td>
        `
        reportTable.appendChild(tr);
@@ -36,10 +36,11 @@ const showData=(data)=>{
 
 }
 
-    const handleAction=(userId,userName)=>{
+//     const handleAction=(userId,userName)=>{
+
+        
    
-    const data={'UserId':userId,'UserName':userName};
-     console.log(data);
+//     const data={'UserId':userId,'UserName':userName};
+//      console.log(data);
 
-
-}
+// }
