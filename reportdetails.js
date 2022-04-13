@@ -1,27 +1,27 @@
 
-
-
-
-const dataLoad=()=>{
+let showLimit=10;
+const dataLoad=(limit)=>{
     fetch('./reportdetails.json')
     .then(res=>res.json())
     .then(data=>{
-         showData(data.slice(0,7));
+         showData(data.slice(0,limit));
     
     })
 
 }
 
-dataLoad();
+dataLoad(showLimit);
 
 
 const showData=(data)=>{
+    $("#reportDetailsId").empty();
+
 
     for (const [idx,cellData] of data.entries()) {
         console.log(cellData,idx);
 
        
-       const reportTable=document.getElementById('reportID');
+       const reportTable=document.getElementById('reportDetailsId');
        const tr=document.createElement('tr');
        tr.innerHTML=`
        
@@ -39,25 +39,15 @@ const showData=(data)=>{
 
 }
 
-let daysLimit=7;
+
 const handleShowDays=(value)=>{
     // console.log(value)
-    daysLimit=value;
-    console.log(daysLimit);
+   const daysLimit=parseInt(value);
+   console.log(daysLimit);
+   dataLoad(daysLimit);
+    
+
 
 }
 
-console.log(daysLimit);
 
-
-
-
-
-//     const handleAction=(userId,userName)=>{
-
-        
-   
-//     const data={'UserId':userId,'UserName':userName};
-//      console.log(data);
-
-// }
