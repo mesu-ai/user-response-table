@@ -70,3 +70,8 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .reportDetails{
+    max-height: auto;
+    min-height: 100vh;
+  }

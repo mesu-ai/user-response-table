@@ -18,7 +18,7 @@ const showData=(data)=>{
 
 
     for (const [idx,cellData] of data.entries()) {
-        console.log(cellData,idx);
+        // console.log(cellData,idx);
 
        
        const reportTable=document.getElementById('reportDetailsId');
@@ -39,15 +39,24 @@ const showData=(data)=>{
 
 }
 
-
 const handleShowDays=(value)=>{
     // console.log(value)
    const daysLimit=parseInt(value);
-   console.log(daysLimit);
+//    console.log(daysLimit);
    dataLoad(daysLimit);
     
 
-
 }
+
+window.addEventListener('load', () => {
+
+    // Via Query parameters - GET
+    const params = (new URL(document.location)).searchParams;
+    const name = params.get('userName');
+    const id = params.get('userId'); 
+    console.log(name,id);
+
+
+})
 
 
