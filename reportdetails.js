@@ -1,16 +1,19 @@
+const userId= localStorage.getItem('id');
 
-let showLimit=10;
-const dataLoad=(limit)=>{
+const dataLoad=(id,limit)=>{
     fetch('./reportdetails.json')
     .then(res=>res.json())
     .then(data=>{
-         showData(data.slice(0,limit));
+
+         const filterData=data.filter(f=>f.userId===id);
+        //  console.log(filterData);
+         showData(filterData.slice(0,limit));
     
     })
 
 }
 
-dataLoad(showLimit);
+
 
 
 const showData=(data)=>{
@@ -43,20 +46,20 @@ const handleShowDays=(value)=>{
     // console.log(value)
    const daysLimit=parseInt(value);
 //    console.log(daysLimit);
-   dataLoad(daysLimit);
-    
+   dataLoad(userId,daysLimit);
 
 }
 
-window.addEventListener('load', () => {
 
-    // Via Query parameters - GET
-    const params = (new URL(document.location)).searchParams;
-    const name = params.get('userName');
-    const id = params.get('userId'); 
-    console.log(name,id);
+const getStoreId=()=>{
+    const showLimit=7;
+    dataLoad(userId,showLimit);
+
+ }
+ getStoreId();
 
 
-})
 
+
+ 
 
