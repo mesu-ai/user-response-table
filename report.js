@@ -25,7 +25,7 @@ const showReportData=(data)=>{
         <td >${cellData.userId}</td>
         <td >${cellData.userName}</td>
         <td>   
-            <button onclick="storeId('${cellData.userId}','${cellData.userName}')" type="button" class="btn btn-primary">Primary</button>
+            <button onclick="storeId('${cellData.userId}','${cellData.userName}')" type="button" class="btn btn-primary">Details</button>
         </td>
        `
        reportTable.appendChild(tr);
